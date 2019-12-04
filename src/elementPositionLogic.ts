@@ -1,13 +1,7 @@
-/**
- * @description Возвращаем неточную позицию и предупреждение
- * @param warn
- * @param position
- */
 import {
   Axis,
   DefaultOpenWay,
   ElementOpenFlow,
-  IGetRectAndPositionElement,
   IPositionElementDistance,
   IPositionElementPadding,
   IPositionElementVariables,
@@ -19,6 +13,11 @@ import {
   UndefinedPosition
 } from './interfaces'
 
+/**
+ * @description Возвращаем неточную позицию и предупреждение
+ * @param warn
+ * @param position
+ */
 const returnUndefinedPosition = (warn: string, position: UndefinedPosition): UndefinedPosition => {
   // console.warn(warn)
   return position
@@ -264,19 +263,4 @@ export const getOpenElementPosition = (
     top: rectByX.top,
     bottom: rectByY.bottom
   }
-}
-
-/**
- * @description Точка входа
- * @param data
- */
-export const getElementRectAndPosition = (data: IGetRectAndPositionElement): ClientRect => {
-  return getOpenElementPosition(
-    data.elements,
-    data.distance,
-    data.padding,
-    data.axis,
-    data.defaultOpenWay,
-    data.elementOpenFlow
-  )
 }

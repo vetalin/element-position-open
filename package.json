@@ -1,0 +1,21 @@
+{
+  "name": "element-position-open",
+  "version": "1.0.0",
+  "description": "Compute element position with relative and parent elements",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vetalin/element-position-open.git"
+  },
+  "author": "vetalin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vetalin/element-position-open/issues"
+  },
+  "homepage": "https://github.com/vetalin/element-position-open#readme"
+}
