@@ -3,24 +3,24 @@
 Есть необходимость позиционировать  элементы относительно контейнеров и
 других элементов в различных направлениях.
 
-![](./elementPositionLogic1.png)
+![](static/elementPositionLogic1.png)
 
 Система выдает координаты элемента таки образом, чтобы он вместился в рамки между parent и 
 relative:
 
-![](./elementPositionSwitch.gif)
+![](static/elementPositionSwitch.gif)
 
 ## Как может позиционироваться элемент
 Предусмотрено 8 позиций для элемента:
 
-![](./elementPositionLogicPosition1.png)
-![](./elementPositionLogicPosition2.png)
-![](./elementPositionLogicPosition3.png)
-![](./elementPositionLogicPosition4.png)
-![](./elementPositionLogicPosition5.png)
-![](./elementPositionLogicPosition6.png)
-![](./elementPositionLogicPosition7.png)
-![](./elementPositionLogicPosition8.png)
+![](static/elementPositionLogicPosition1.png)
+![](static/elementPositionLogicPosition2.png)
+![](static/elementPositionLogicPosition3.png)
+![](static/elementPositionLogicPosition4.png)
+![](static/elementPositionLogicPosition5.png)
+![](static/elementPositionLogicPosition6.png)
+![](static/elementPositionLogicPosition7.png)
+![](static/elementPositionLogicPosition8.png)
 
 ## Поведение
 Функция принимает аргумент оси `Axis`, по которой необходимо позиционировать элемент относитльено
@@ -117,8 +117,8 @@ export type ElementOpenFlow = 'start' | 'end'
 
 elementOpenFlow отвечает за разницу межну 1 и 2 положением элемента:
 
-elementOpenFlow = start: ![](./elementPositionLogicPosition1.png)
-elementOpenFlow = end: ![](./elementPositionLogicPosition2.png)
+elementOpenFlow = start: ![](static/elementPositionLogicPosition1.png)
+elementOpenFlow = end: ![](static/elementPositionLogicPosition2.png)
 
 ## Результат
 
