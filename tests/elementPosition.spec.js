@@ -1,4 +1,5 @@
-import { getElementRectAndPosition, getPositionX } from 'src/elementPositionLogic'
+import { getPositionX } from '../src/elementPositionLogic'
+import { getElementRectAndPosition } from '../src/index'
 
 describe('Element position logic', () => {
   describe('check position X', () => {
