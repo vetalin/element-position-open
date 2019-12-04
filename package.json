@@ -7,8 +7,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "webpack",
-    "build-ts": "tsc"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -30,18 +29,10 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babylon": "^6.18.0",
     "eslint": "^6.2.2",
-    "faker": "^4.1.0",
     "jest": "^24.9.0",
-    "jest-serializer-vue": "^2.0.2",
     "jest-transform-stub": "^2.0.0",
     "jest-watch-typeahead": "^0.4.0",
-    "node-fetch": "^2.6.0",
     "ts-jest": "^23.10.5",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.7.3",
-    "webpack-cli": "^3.3.10"
-  },
-  "dependencies": {
-    "webpack": "^4.41.2"
+    "typescript": "^3.7.3"
   }
 }
