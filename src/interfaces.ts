@@ -65,9 +65,9 @@ export interface IPositionElementVariablesWithoutAxis {
 
 export interface IGetRectAndPositionElement {
   elements: IPositionElementVariables
-  distance: IPositionElementDistance
-  padding: IPositionElementPadding
-  axis: Axis | 'xy'
+  distance?: IPositionElementDistance
+  padding?: IPositionElementPadding
+  axis?: Axis | 'xy'
   defaultOpenWay?: DefaultOpenWay
   elementOpenFlow?: ElementOpenFlow
 }
