@@ -1,0 +1,41 @@
+{
+  "name": "element-position-open",
+  "version": "1.1.0",
+  "description": "Function for compute element position coords on relative and parent elements rects",
+  "keywords": ["Elements", "Compute position", "Position", "Open flow", "Open element", "Relative open", "Relative elements", "Position relative"],
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vetalin/element-position-open.git"
+  },
+  "author": "vetalin (telegram: vetalin)",
+  "license": "MIT",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/vetalin/element-position-open/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/vetalin/element-position-open#readme",
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babylon": "^6.18.0",
+    "eslint": "^6.2.2",
+    "jest": "^24.9.0",
+    "jest-transform-stub": "^2.0.0",
+    "jest-watch-typeahead": "^0.4.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.7.3"
+  }
+}
