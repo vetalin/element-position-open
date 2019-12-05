@@ -1,8 +1,10 @@
 import {
   Axis,
-  IPositionElementDistance, IPositionElementPadding,
+  IPositionElementDistance,
+  IPositionElementPadding,
   IPositionElementVariables,
-  IPositionElementVariablesWithDistance, UndefinedPosition
+  IPositionElementVariablesWithDistance,
+  UndefinedPosition
 } from 'src/interfaces'
 
 

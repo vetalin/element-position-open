@@ -1,9 +1,11 @@
 import {
   Axis,
-  IPositionElementVariables, IPositionElementVariablesWithDistance,
-  IPositionElementVariablesWithoutAxis, IPositionSizesWithoutAxis, PositionX, PositionY,
+  IPositionElementVariables,
+  IPositionElementVariablesWithoutAxis,
+  IPositionSizesWithoutAxis,
+  PositionWithoutAxis,
   UndefinedPosition
-} from 'src/interfaces'
+} from './interfaces'
 
 /**
  * @description Возвращаем неточную позицию и предупреждение
@@ -24,68 +26,37 @@ export const getBeforeOrAfterSpace = ({ element, parent, relative }: IPositionEl
   return beforeSpace > afterSpace ? 'before' : 'after'
 }
 
-const getPositionDataByAxis = ({ element, parent, relative }: IPositionElementVariables) => {
+export const getPositionDataByAxis = ({ element, parent, relative }: IPositionElementVariables) => {
   return (axis: Axis): IPositionElementVariablesWithoutAxis => {
     const sizeKey = axis === 'x' ? 'width' : 'height'
     const offsetKey = axis === 'x' ? 'left' : 'top'
-    const translater = (elm: ClientRect): IPositionSizesWithoutAxis => {
+    const getSizeOffset = (elm: ClientRect): IPositionSizesWithoutAxis => {
       return {
         size: elm[sizeKey],
         offset: elm[offsetKey]
       }
     }
     return {
-      element: translater(element),
-      relative: translater(relative),
-      parent: translater(parent)
+      element: getSizeOffset(element),
+      relative: getSizeOffset(relative),
+      parent: getSizeOffset(parent)
     }
   }
 }
 
-/**
- * @description Определяем в какую сторону по оси Х открыть элемент. Если ни в ту, не в другую сторону элемент не влазит
- * то определяем позицию как неопределенную и указываем направление, чтобы в последствии
- * открыть его там, с изменением размеров
- * @param element
- * @param parent
- * @param relative
- */
-export const getPositionX = ({ element, parent, relative }: IPositionElementVariablesWithDistance): PositionX => {
-  return <PositionX>getPositionElement({ element, parent, relative })('x')
-}
-
-/**
- * @description Определяем в какую сторону по оси Y открыть элемент. Если ни в ту, не в другую сторону элемент не влазит
- * то определяем позицию как неопределенную и указываем направление, чтобы в последствии
- * открыть его там, с изменением размеров
- * @param element
- * @param parent
- * @param relative
- */
-export const getPositionY = ({ element, parent, relative }: IPositionElementVariablesWithDistance): PositionY => {
-  return <PositionY>getPositionElement({ element, parent, relative })('y')
-}
-
-const getPositionElement = (positionVariables: IPositionElementVariablesWithDistance) => {
-  return (axis: Axis): PositionY | PositionX => {
-    const { element, parent, relative } = getPositionDataByAxis(positionVariables)(axis)
-    const beforeOrAfter = getBeforeOrAfterSpace({ element, parent, relative })
-    if (element.size >= parent.size) {
-      return returnUndefinedPosition('getPosition: elementSize >= parentSize', beforeOrAfter)
-    }
-    const sumSize = element.size + relative.size
-    if (sumSize >= parent.size) {
-      return returnUndefinedPosition('getPosition: elementSize + relativeSize >= parent.size', beforeOrAfter)
-    }
-    if ((element.size > (parent.size - (relative.offset + relative.size))) && (element.size > relative.offset)) {
-      return returnUndefinedPosition('getPosition: elementSize has no out space', beforeOrAfter)
-    }
-    if (relative.offset + sumSize <= parent.size) {
-      return axis === 'x' ? 'right' : 'bottom'
-    }
-    if (relative.offset >= element.size) {
-      return axis === 'x' ? 'left' : 'top'
-    }
-    return 'after'
+export const getPositionElementWithoutAxis = ({element, parent, relative}: IPositionElementVariablesWithoutAxis): PositionWithoutAxis => {
+  const beforeOrAfter = getBeforeOrAfterSpace({ element, parent, relative })
+  if (element.size >= parent.size) {
+    return returnUndefinedPosition('getPosition: elementSize >= parentSize', beforeOrAfter)
   }
+  const sumSize = element.size + relative.size
+  if (sumSize >= parent.size) {
+    return returnUndefinedPosition('getPosition: elementSize + relativeSize >= parent.size', beforeOrAfter)
+  }
+  if ((element.size > (parent.size - (relative.offset + relative.size))) && (element.size > relative.offset)) {
+    return returnUndefinedPosition('getPosition: elementSize has no out space', beforeOrAfter)
+  }
+  if (relative.offset + sumSize <= parent.size) return 'position-after'
+  if (relative.offset >= element.size) return 'position-before'
+  return 'after'
 }
