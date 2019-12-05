@@ -1,7 +1,8 @@
 {
   "name": "element-position-open",
-  "version": "1.0.0",
-  "description": "Compute element position with relative and parent elements",
+  "version": "1.1.0",
+  "description": "Function for compute element position coords on relative and parent elements rects",
+  "keywords": ["Elements", "Compute position", "Position", "Open flow", "Open element", "Relative open", "Relative elements", "Position relative"],
   "directories": {
     "test": "tests"
   },
@@ -13,12 +14,14 @@
     "type": "git",
     "url": "git+https://github.com/vetalin/element-position-open.git"
   },
-  "author": "vetalin",
-  "license": "ISC",
+  "author": "vetalin (telegram: vetalin)",
+  "license": "MIT",
+  "private": false,
   "bugs": {
     "url": "https://github.com/vetalin/element-position-open/issues"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "homepage": "https://github.com/vetalin/element-position-open#readme",
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
