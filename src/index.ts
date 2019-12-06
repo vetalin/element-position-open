@@ -1,7 +1,6 @@
 import { IGetRectAndPositionElement, IPositionElementDistance, IPositionElementPadding } from './interfaces'
 import { getOpenElementPosition } from './elementPositionLogic'
 
-
 /**
  *
  * @param data
