@@ -1,6 +1,6 @@
 {
   "name": "element-position-open",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Function for compute element position coords on relative and parent elements rects",
   "keywords": [
     "Elements",
