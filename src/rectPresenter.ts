@@ -18,8 +18,8 @@ export const getPositionWithoutAxis = (positionWithoutAxis: PositionWithoutAxis,
   const {relative, element, parent} = getPositionDataByAxis(elements)(axis)
   const distanceWithoutAxis = distance[axis]
   const openToOnAxis = () => {
-    const openToBefore = relative.offset + relative.size + distanceWithoutAxis
-    const openToAfter = relative.offset - distanceWithoutAxis - element.size
+    const openToAfter = relative.offset + relative.size + distanceWithoutAxis
+    const openToBefore = relative.offset - distanceWithoutAxis - element.size
     return positionWithoutAxis !== 'position-before' && defaultOpenWay !== 'before'
       ? openToAfter
       : openToBefore
