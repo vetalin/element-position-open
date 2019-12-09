@@ -1,5 +1,4 @@
-export type PositionX = 'left' | 'right' | UndefinedPosition
-export type PositionY = 'top' | 'bottom' | UndefinedPosition
+export type PositionWithoutAxis = 'position-after' | 'position-before' | UndefinedPosition
 export type UndefinedPosition = 'before' | 'after'
 export type Axis = 'x' | 'y'
 export type ElementSizes = ClientRect | DOMRect
@@ -37,6 +36,11 @@ export interface IPositionElementPadding {
   y: number
 }
 
+export interface IPositionCoordinates {
+  left: number
+  top: number
+}
+
 /**
  * .getBoundedRect()
  * @param element Открываемый элемент
@@ -65,9 +69,9 @@ export interface IPositionElementVariablesWithoutAxis {
 
 export interface IGetRectAndPositionElement {
   elements: IPositionElementVariables
-  distance: IPositionElementDistance
-  padding: IPositionElementPadding
-  axis: Axis | 'xy'
+  distance?: IPositionElementDistance
+  padding?: IPositionElementPadding
+  axis?: Axis
   defaultOpenWay?: DefaultOpenWay
   elementOpenFlow?: ElementOpenFlow
 }
